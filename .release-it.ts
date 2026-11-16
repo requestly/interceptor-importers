@@ -48,12 +48,7 @@ const config: Config = {
             return; // Hide other types
           }
 
-          return {
-            ...commit,
-            type,
-            subject: commit.header,
-            shortHash: commit.shortHash ?? commit.hash?.substring(0, 7),
-          };
+          return { ...commit, type, subject: commit.header };
         },
       },
     },
